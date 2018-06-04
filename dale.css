@@ -1,0 +1,13 @@
+@media (min-width: 768px){
+/* 	.carousel-caption { max-width: 66.666%; } */
+}
+
+.carousel-caption h1 { font-size: 22px; }
+
+ul.section_page_menu { font-size: 16px; }
+.page-template-template-service-subpage_2col .current_page_parent,
+.page-template-template-green_spaces .current_page_parent { font-size: 0.8em; }
+
+.enable_captcha { border: none !important; height: auto !important; padding: 10px 0 !important; background-color: transparent !important; }
+
+

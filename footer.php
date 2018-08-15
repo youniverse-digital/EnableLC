@@ -52,6 +52,27 @@
 	</footer>
 	
 	</div> <!-- End of site_wrapper -->
+
+	<div class="cookie-footer cookie-closed">
+		<div class="cookie-inner">
+			<div class="cookie-description">
+				<p class="large-only">
+					This site makes use of cookies to provide necessary functionality to the site such as logging in, and to analyse user activity in order to refine the site. By clicking "Got it!", you acknowledge that these activities will take place and consent to the use of cookies. If you are under the age of consent in your region, or do not wish to grant consent to using cookies on your device, please click "Learn More". 
+				</p>
+				<p class="large-only">
+					Please review our privacy policy to see how we make use of data, available by clicking here or by the link in the site footer. If you wish to withdraw consent, use your browser to clear cookies for the site and refresh the page.
+				</p>
+				<p class="small-only">
+					EnableLC use cookies to analyse how our site is used and provide a better experience. To consent to these activities, tap "Got it!".
+				</p>
+			</div>
+			<div class="cookie-buttons">
+				<a href="javascript:void(0)" class="cookie-accept">Got it!</a>
+				<a href="/privacy-cookies/" class="cookie-more">Learn More</a>
+			</div>
+		</div>
+	</div>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script> 
@@ -191,19 +212,19 @@
 				// 	}
 				// });
 				// 
-				jQuery("li.fas_menu a").click(function(e) {
-					e.preventDefault();
-					//console.log('clicked2');
-					var vTarget;
-					if (gIsHomepage == 1){
-						// mCloseIconMenu();
-						vTarget = jQuery('div#icon_service_menu');
-						jQuery("html, body").animate({ scrollTop: vTarget.offset().top }, 1000);
-					} else {
-						vTarget = jQuery(this).parent().parent().parent().parent().attr('id');
-						mCheckIconMenu('icon_service_menu');
-					}
-				});
+				// jQuery("li.fas_menu a").click(function(e) {
+				// 	e.preventDefault();
+				// 	//console.log('clicked2');
+				// 	var vTarget;
+				// 	if (gIsHomepage == 1){
+				// 		// mCloseIconMenu();
+				// 		vTarget = jQuery('div#icon_service_menu');
+				// 		jQuery("html, body").animate({ scrollTop: vTarget.offset().top }, 1000);
+				// 	} else {
+				// 		vTarget = jQuery(this).parent().parent().parent().parent().attr('id');
+				// 		mCheckIconMenu('icon_service_menu');
+				// 	}
+				// });
 
 				jQuery("body").on(pUI_Action, "li.au_menu a", function(e) {
 					e.preventDefault();
@@ -214,6 +235,41 @@
 
 				
 			});
+
+			var cookieNotice = document.querySelector('.cookie-footer');
+			var cookieAccept = document.querySelector('.cookie-accept');
+			var cookieConsent = window.localStorage.getItem('cookieConsent');
+
+			if (cookieConsent != "true") {
+				cookieNotice.classList.remove('cookie-closed');
+			}
+
+			cookieAccept.addEventListener('click', function(e) {
+				e.preventDefault();
+
+				cookieNotice.classList.add('cookie-animate-out');
+				window.localStorage.setItem("cookieConsent", "true");
+
+				initCookies();
+
+				setTimeout(function() {
+					cookieNotice.classList.add('cookie-closed');
+					cookieNotice.classList.remove('cookie-animate-out');
+				}, 410)
+			});
+
+			function initCookies() {
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+				
+				ga('create', 'UA-77826812-1', 'auto');
+				ga('send', 'pageview');
+
+				console.log("cookied created");
+			}
+
 		</script>
     
     

@@ -1,5 +1,12 @@
 jQuery(document).ready(function(){
 
+	$('.service').mouseover(function() {
+		$(this).find('.service-inner').addClass('service-inner-open');
+	}).mouseout(function() {
+		$(this).find('.service-inner').removeClass('service-inner-open');
+	})
+
+
 	$('.rollover').mouseover(function(){
 		$('.rollover_content.active').removeClass('active');
 		var id = $(this).attr('id');
@@ -256,13 +263,16 @@ jQuery(document).ready(function(){
         }).show();
 	});
 
+	if (document.title == "Job Application Form - Enable : Enable") {
+		$(window).bind('beforeunload', function(e) {
+			var res = confirm("Are you sure you want to leave this application? Any unsaved changes will be lost.");
 
-	
-
-
-
-
-
-
-
+			if (res) {
+				return true;
+			} else {
+				return false;
+			}
+		})
+	}
 });
+

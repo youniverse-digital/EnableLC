@@ -11,7 +11,7 @@
 	$GLOBALS['pID'] = $ancestors;
 	
 	echo '
-	<div class="row">
+	<div class="row bottom-border-white ' . $page_class .' ">
 		<h1 class="content_wrap '.$page_class.'">'.$parent_page_title.'</h1>
 	</div>
 	';
@@ -21,7 +21,7 @@
 
 	<div id="<?php echo $page_id; ?>" role="main" class="page-content">
 	
-		<div class="row">
+		<div class="row breadcrumb-row">
 			<div class="content_wrap">
 				<?php custom_breadcrumbs(); ?>
 			</div>

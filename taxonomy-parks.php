@@ -1,6 +1,6 @@
 <?php 
 get_header(); 
-get_template_part('inc/banner_blog');
+// get_template_part('inc/banner_blog');
 ?>
 	<div id="" role="main" class="page-content">
 		<!-- section -->

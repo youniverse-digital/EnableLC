@@ -6,7 +6,7 @@
 	}
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
+<html <?php language_attributes(); ?> class="no-js" style="margin-top: 0px !important">
   <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -96,7 +96,7 @@
     
     <div id="site_wrapper" class="container-fluid">
        
-			<div id="cookies" class="row">
+			<!-- <div id="cookies" class="row">
 				<div class="content_wrap">
 					<p>We use cookies to ensure that we give you the best experience on our website. This includes cookies from third party social media websites 
 					if you visit a page which contains embedded content from social media. Such third party cookies may track your use of the Enable website. Cookie 
@@ -104,7 +104,7 @@
 					<span id="cookie_btns"><a id="cookie_continue" href="#" title="I want to continue to use the site">OK</a><a id="cookie_link" href="/privacy-cookies/" title="Find out more about our cookies policy">Find out more</a></span>
 					</p>
 				</div>
-			</div>
+			</div> -->
   
 		<?php get_template_part('inc/menu'); ?>
    

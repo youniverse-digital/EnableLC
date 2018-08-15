@@ -1,10 +1,10 @@
 <header class="row">
-  <div class="content_wrap">
+  <div class="">
 		<div id="top_bar">
-			<div class="content_wrapX clearfix">
+			<div class="content_wrapX clearfix content_wrap wrap_transparent">
 		
 				<div class="col-xs-12 col-sm-4 clearfix">
-					<a class="navbar-brand" href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo dirname( get_bloginfo('stylesheet_url') ); ?>/style/img/enable_logo_220.png" alt="Enable Leisure and Culture" /></a>
+					<a class="navbar-brand" href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo dirname( get_bloginfo('stylesheet_url') ); ?>/img/enable_logo_nonwhite.png" alt="Enable Leisure and Culture" /></a>
 				</div>
 			
 				<div class="col-xs-12 col-sm-8 clearfix">
@@ -52,43 +52,6 @@
 			</div>
 		</nav>
 	
-		<?php 
-			// Add service menu if not on home page home page
-			if (!is_front_page()){
-				echo '
-				<div id="icon_service_menu" class="row icon_menu icon_menu_hide">
-					<div class="content_wrapX">				
-						';
-						wp_nav_menu(array(
-							'theme_location' => 'find_service',
-							'container' => 'div',
-							'container_class' => 'service_icon_wrapper clearfix',
-							'menu_class' => 'icon_menu clearfix',
-							'link_before' => '<span>',     
-							'link_after'  => '</span>',
-							'fallback_cb' => false
-						));
-						echo '
-					</div>
-				</div>
-				';
-			}
 		
-			echo '
-			<div id="icon_about_us_menu" class="row icon_menu icon_menu_hide">
-				<div class="content_wrapX">				
-					';
-					wp_nav_menu(array(
-						'theme_location' => 'about_us',
-						'container' => 'div',
-						'container_class' => 'about_us_icon_wrapper clearfix',
-						'menu_class' => 'clearfix',
-						'fallback_cb' => false
-					));
-					echo '
-				</div>
-			</div>
-			';
-		?>
 	</div>
 </header>

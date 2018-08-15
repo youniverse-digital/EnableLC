@@ -1,7 +1,18 @@
 <?php
 	$show_banner = get_field('show_banner');
+
+	if ($show_banner == true && is_front_page()) {
+		?>
+			<div class="home-banner">
+				<div class="home-banner-inner">
+					<p>Welcome to Enable Leisure and Culture.</p>
+					<p>Enriching lives and strengthening communities</p>
+				</div>
+			</div>
+		<?php
+	}
 	
-	if ($show_banner == true){
+	if ($show_banner == true &&  !is_front_page()){
 	
 		$use_parent_banner = get_field('use_parent_banner');
 

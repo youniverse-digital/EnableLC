@@ -149,6 +149,37 @@
 				}
 			?>
 
+			<?php 
+			
+				if (is_page(117)) {
+
+					if (have_rows('brochures')) {
+						echo '
+							<section class="brochures_wrap">
+								<div class="content_wrap">
+									';
+									
+									while (have_rows('brochures')) {
+										the_row();
+
+										echo '
+											<div class="brochure_row">
+												<strong>' . get_sub_field('brochure_title') . '</strong>
+												<embed src="' . get_sub_field('brochure_pdf') . '" type="application/pdf" width="100%" height="600px" />
+											</div>
+										';
+									}
+
+									echo '
+								</div>
+							</section>
+						';
+					}
+
+				}
+
+			?>
+
 
 				<?php // display any maps
 				if (have_rows('locations')){		

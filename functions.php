@@ -1765,4 +1765,28 @@ function WP_Widget_Recent_Posts_Exclude_init() {
 
 add_action('widgets_init', 'WP_Widget_Recent_Posts_Exclude_init');
 
+
+
+function get_first_image( $content ) {
+    $first_img = '';
+    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $content, $matches);
+    $first_img = $matches[1][0];
+
+    if (empty($first_img)) {
+        $img_data = array(
+            'img_url'   => '',
+            'img_class' => 'no-img'
+        );
+    } else {
+        $img_data = array(
+            'img_url'   => $first_img,
+            'img_class' => 'img'
+        );
+    }
+
+    
+
+    return $img_data;
+}
+
 ?>
